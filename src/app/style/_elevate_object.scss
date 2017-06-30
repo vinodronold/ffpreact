@@ -1,0 +1,8 @@
+@mixin elevate-object($z-value) {
+    $elevate-object-umbra-map: ( 2: "0px 3px 1px -2px", 4: "0px 2px 4px -1px", 8: "0px 5px 5px -3px", 12: "0px 7px 8px -4px", 16: "0px 8px 10px -5px");
+    $elevate-object-penumbra-map: ( 2: "0px 2px 2px 0px", 4: "0px 4px 5px 0px", 8: "0px 8px 10px 1px", 12: "0px 12px 17px 2px", 16: "0px 16px 24px 2px");
+    $elevate-object-ambient-map: ( 2: "0px 1px 5px 0px", 4: "0px 1px 10px 0px", 8: "0px 3px 14px 2px", 12: "0px 5px 22px 4px", 16: "0px 6px 30px 5px");
+    box-shadow: #{map-get($elevate-object-umbra-map, $z-value)} rgba(black, .2),
+    #{map-get($elevate-object-penumbra-map, $z-value)} rgba(black, .14),
+    #{map-get($elevate-object-ambient-map, $z-value)} rgba(black, .12);
+}
