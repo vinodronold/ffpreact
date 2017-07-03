@@ -7,7 +7,7 @@ const App = () =>
   <div>
     <Toolbar />
     <PlayerLayout />
-    <Button />
+    <Button>TEST</Button>
   </div>
 
 export default App

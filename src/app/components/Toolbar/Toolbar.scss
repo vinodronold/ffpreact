@@ -1,18 +1,28 @@
 @import "../../style/_colors.scss";
 @import "../../style/_elevate_object.scss";
-$space: 1.5rem;
+$space: 1rem;
 .toolbar {
-  position: fixed;
-  top: 0px;
-  width: 100%;
-  background-color: $primary;
-  color: $on-primary;
-  padding: $space;
-  font-weight: 400;
-  letter-spacing: 0.2rem;
-  @include elevate-object(2);
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    top: 0px;
+    width: 100%;
+    padding: $space;
+    vertical-align: middle;
+    background-color: $primary;
+    color: $on-primary;
+    letter-spacing: 0.2rem;
+    @include elevate-object(2);
+    .title {
+        font-weight: 100;
+    }
+    .right {
+        margin-left: auto;
+    }
 }
 
 .toolbar-clearspace {
-    padding: $space * 1.5;
+    padding: $space * 2;
 }
