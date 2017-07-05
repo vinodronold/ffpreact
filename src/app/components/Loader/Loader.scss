@@ -1,0 +1,30 @@
+@import "../../style/_colors.scss";
+@import "../../style/_elevate_object.scss";
+$spacing: .25rem;
+.loader {
+    .text {
+        text-align: center;
+        letter-spacing: $spacing * 2;
+    }
+    .container {
+        margin: $spacing * 4;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: $spacing;
+        .item {
+            padding: $spacing;
+            background-color: $teal-light;
+        }
+        @for $i from 1 through 12 {
+            .item-#{$i} {
+                animation: activate 1s $i*0.1s ease-out alternate infinite;
+            }
+        }
+    }
+}
+@keyframes activate {
+    100% {
+        @include elevate-object(12);
+        background-color: $teal-active;
+    }
+}

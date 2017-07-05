@@ -1,13 +1,13 @@
 import Toolbar from './components/Toolbar'
 import PlayerLayout from './components/PlayerLayout'
-import Button from './components/Button'
+import Loader from './components/Loader'
 import './style'
 
 const App = () =>
   <div>
     <Toolbar />
     <PlayerLayout />
-    <Button>TEST</Button>
+    <Loader />
   </div>
 
 export default App
