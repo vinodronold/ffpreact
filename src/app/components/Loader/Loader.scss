@@ -1,30 +1,31 @@
 @import "../../style/_colors.scss";
 @import "../../style/_elevate_object.scss";
+// CHECK TO IMPROVE -> http://tobiasahlin.com/blog/how-to-animate-box-shadow/
 $spacing: .25rem;
+$items: 15;
 .loader {
-    .text {
-        text-align: center;
-        letter-spacing: $spacing * 2;
+  .text {
+    text-align: center;
+    letter-spacing: $spacing * 2;
+  }
+  .container {
+    margin: $spacing * 4;
+    display: grid;
+    grid-template-columns: repeat($items, 1fr);
+    .item {
+      padding: $spacing;
+      background-color: $teal-active;
     }
-    .container {
-        margin: $spacing * 4;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-gap: $spacing;
-        .item {
-            padding: $spacing;
-            background-color: $teal-light;
-        }
-        @for $i from 1 through 12 {
-            .item-#{$i} {
-                animation: activate 1s $i*0.1s ease-out alternate infinite;
-            }
-        }
+    @for $i from 1 through $items {
+      .item-#{$i} {
+        animation: activate .5s $i*.03s ease-out alternate infinite;
+      }
     }
+  }
 }
+
 @keyframes activate {
-    100% {
-        @include elevate-object(12);
-        background-color: $teal-active;
-    }
+  100% {
+    opacity: 0;
+  }
 }

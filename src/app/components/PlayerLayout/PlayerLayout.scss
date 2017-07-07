@@ -4,11 +4,12 @@
 .chords_container {
     margin: 1rem;
     display: grid;
+    perspective: 800px;
     @media only screen and (max-width: $mobile) {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
     }
     @media only screen and (min-width: $mobile) {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(8, 1fr);
     }
     grid-gap: 1rem;
     .chords {
@@ -20,6 +21,7 @@
     }
     .pulse {
         background-color: $teal-light;
+        @include elevate-object(12);
         animation: chordPulse 500ms ease-out alternate infinite;
     }
     .active {
@@ -30,9 +32,9 @@
 
 @keyframes chordPulse {
     0% {
-        @include elevate-object(2);
+        transform: scale(1);
     }
     100% {
-        @include elevate-object(12);
+        transform: scale(1.05);
     }
 }

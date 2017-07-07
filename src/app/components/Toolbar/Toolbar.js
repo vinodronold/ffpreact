@@ -6,8 +6,8 @@ const Toolbar = () =>
     <div class="toolbar">
       <div class="title">Toolbar</div>
       <div class="right">
-        <Button onDark>BUTTON 1</Button>
-        <Button onDark>BUTTON 2</Button>
+        <Button onDark>SAVE</Button>
+        <Button onDark>LOGOUT</Button>
       </div>
     </div>
     <div class="toolbar-clearspace" />
